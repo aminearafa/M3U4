@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ejercicio 2 Unidad 4: Javascript (parte 2)</title>
+	<link rel="stylesheet" href="Ejercicio 2.css">
+</head>
+<body>
+    <div class="box">
+        <textarea rows="3" maxlength="5000" id="mensaje"></textarea>
+        <div id="contador">0/5000</div>
+    </div>
+
+    <script>
+        const mensaje = document.getElementById('mensaje');
+        const contador = document.getElementById('contador');
+    
+    mensaje.addEventListener('input', function(e) {
+    const target = e.target;
+    const longitudMax = target.getAttribute('maxlength');
+    const longitudAct = target.value.length;
+    contador.innerHTML = `${longitudAct}/${longitudMax}`;
+    });
+
+    </script>
+</body>
+</html>
